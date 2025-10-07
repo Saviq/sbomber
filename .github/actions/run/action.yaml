@@ -27,7 +27,7 @@ runs:
   - name: Checkout security scanner
     uses: actions/checkout@v4
     with:
-      repository: canonical/sbomber
+      repository: Saviq/sbomber
       ref: ${{ inputs.sbomber-ref }}
       path: sbomber
   - name: Install uv
