@@ -28,6 +28,7 @@ class ScannerType(str, Enum):
 
     trivy = "trivy"
     osv = "osv"
+    blackduck = "blackduck"
 
 
 class Scanner(Client):
