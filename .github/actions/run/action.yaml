@@ -57,10 +57,12 @@ runs:
   - name: Clear the reports dir # in case previous runs left something there already
     shell: bash
     run: rm -rf /tmp/.sbomber-reports/
-  - name: Download the reports
+  - if: ${{ !cancelled() }}
+    name: Download the reports
     shell: bash
     run: ./sbomber/sbomber download --reports-dir=/tmp/.sbomber-reports/
-  - name: Upload reports
+  - if: ${{ !cancelled() }}
+    name: Upload reports
     uses: actions/upload-artifact@v4
     with:
       name: ${{ inputs.artifact-name }}-reports
